@@ -1,0 +1,3163 @@
+
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Suzuki- Motor Cycles</title>
+	<link rel="shortcut icon" type="image/png" href="suzukifavicon.jpg">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="campaign.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex header-box">
+
+        <div class="logo mr-auto">
+		    <a href="index.php"><img src="marketinglogo.png" alt="logo" class="img-fluid"></a>
+        </div>
+
+        <nav class="nav-menu d-none d-lg-block">
+            <ul class="d-flex m-0">
+                <li><a href="admindashboard.php">Home</a></li>
+				<li class="active"><a href="dealers.php?dealer=Padmaja_KRSH">Dealer stats</a></li>
+				<li><a href="dealerleads.php?dealer=Padmaja_KRSH">Latest Enquires</a></li>
+				<li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-overlay">
+            <div class="menu-box">
+                <div class="menu-card">
+                    <div class="py-3">
+                        <ul class="list-unstyled">
+                            <li><a href="admindashboard.php">Home</a></li>
+							<li class="active"><a href="dealers.php?dealer=Padmaja_KRSH">Dealer stats</a></li>
+							<li><a href="dealerleads.php?dealer=Padmaja_KRSH">Latest Enquires</a></li>
+							<li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <svg class="menu-close-btn" xmlns="http://www.w3.org/2000/svg" height="512px" viewBox="0 0 329.26933 329" width="512px"><g><path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g> </svg>
+            </div>
+        </div>
+
+        <div class="d-lg-none d-block">
+            <div class="open">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -96 512 512" width="40px" height="40px" ><g class="menu-bars"><path d="m32 0h448c17.671875 0 32 14.328125 32 32s-14.328125 32-32 32h-448c-17.671875 0-32-14.328125-32-32s14.328125-32 32-32zm0 0"/><path d="m32 128h448c17.671875 0 32 14.328125 32 32s-14.328125 32-32 32h-448c-17.671875 0-32-14.328125-32-32s14.328125-32 32-32zm0 0"/><path d="m32 256h448c17.671875 0 32 14.328125 32 32s-14.328125 32-32 32h-448c-17.671875 0-32-14.328125-32-32s14.328125-32 32-32zm0 0"/></g></svg>
+            </div>
+        </div>
+
+      </div>
+    </header><!-- End Header -->
+	
+	
+<main>
+        <!-- Table with 100% with responsive start -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row m-0" style="justify-content: space-between;">
+                    <div class="pb-3">
+                        <h1 style="font-size:32px">Padmaja Suzuki Krishna</h>
+                    </div>
+                    <div class="pb-3">
+                        <label>Filename : </label>
+						<input class="filename" type='text' name='dfilename' id='filename' Placeholder="Filename" required></input>
+                        <button class="open-button" id="create_excel">Download file </button>
+                    </div>
+                </div>
+                 <div style="display: flex; justify-content: flex-end; max-width:200px; float:right;">
+					<button type="reset" name="reset" value='Reset' id="configreset" class="open-button">Reset</button>
+				</div>
+				<div class="pb-3">
+												<form id="configform"  name='filterform' action='' method='GET' class = 'form-inline'>
+						<div class='form-group pr-2'><select class='form-control input-sm' name ='enquiry_date' id='enquiry_date'><option value='' selected='selected'>Select Date</option><option value='2021-05-08'>08-May-2021</option><option value='2021-05-09'>09-May-2021</option><option value='2021-05-11'>11-May-2021</option><option value='2021-05-12'>12-May-2021</option><option value='2021-05-13'>13-May-2021</option><option value='2021-05-14'>14-May-2021</option><option value='2021-05-15'>15-May-2021</option><option value='2021-05-16'>16-May-2021</option><option value='2021-05-17'>17-May-2021</option><option value='2021-05-18'>18-May-2021</option><option value='2021-05-19'>19-May-2021</option><option value='2021-05-20'>20-May-2021</option><option value='2021-05-21'>21-May-2021</option><option value='2021-05-22'>22-May-2021</option><option value='2021-05-23'>23-May-2021</option><option value='2021-05-24'>24-May-2021</option><option value='2021-05-25'>25-May-2021</option><option value='2021-05-26'>26-May-2021</option></select></div><div class='form-group pr-2'><select class='form-control input-sm' name ='city'><option value=''>Select City</option><option value='Akividu'>Akividu</option><option value='Bandar'>Bandar</option><option value='bantumilli'>Bantumilli</option><option value='Bhavanipuram'>Bhavanipuram</option><option value='city'>City</option><option value='Gudivada'>Gudivada</option><option value='Guntur'>Guntur</option><option value='h.junction'>H.junction</option><option value='jaggayyapeta'>Jaggayyapeta</option><option value='Kanuru/VIJAYAWADA'>Kanuru/VIJAYAWADA</option><option value='khalekhanpet'>Khalekhanpet</option><option value='krishna'>Krishna</option><option value='krouse'>Krouse</option><option value='Machilipatnam'>Machilipatnam</option><option value='machlipatam'>Machlipatam</option><option value='Mangalagiri'>Mangalagiri</option><option value='Mylavaram'>Mylavaram</option><option value='Naresh Kampa'>Naresh Kampa</option><option value='Nimmakuru'>Nimmakuru</option><option value='Nuzvid'>Nuzvid</option><option value='Nuzvide'>Nuzvide</option><option value='ongole'>Ongole</option><option value='p:+919533258899'>P:+919533258899</option><option value='p:+919700755134'>P:+919700755134</option><option value='pamarru'>Pamarru</option><option value='tadepalligudem'>Tadepalligudem</option><option value='Tenali'>Tenali</option><option value='Thirumalagari'>Thirumalagari</option><option value='Tippanagunta'>Tippanagunta</option><option value='Vijayavada'>Vijayavada</option><option value='Vijayawada'>Vijayawada</option><option value='vijayawada.'>Vijayawada.</option><option value='vinukonda'>Vinukonda</option><option value='Vissannapeta'>Vissannapeta</option><option value='vuyyuru'>Vuyyuru</option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='district'><option value=''>Select District</option><option value='krishna'>Krishna</option><option value='krishna_'>Krishna </option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='model_of_vehicle'><option value=''>Select Model</option><option value='access_125'>Access 125</option><option value='burgman_street'>Burgman Street</option><option value='gixxer'>Gixxer</option><option value='gixxer_250'>Gixxer 250</option><option value='gixxer_sf'>Gixxer Sf</option><option value='gixxer_sf250'>Gixxer Sf250</option><option value='intruder'>Intruder</option></select></div>						<div class='form-group pr-2'>
+							<select class='form-control input-sm'  name ='test_ride'>
+								<option value='' >Select TestRide</option>
+								<option value='Yes' >Yes</option>
+								<option vlaue='No' >No</option>
+							</select>
+						</div>
+						<div class='form-group pr-2'>
+							<select class='form-control input-sm'  name ='response' id='response'>
+								<option value='' selected='selected'>Select Enquiry Status</option>
+								<option value='Booking Done' >Booking Done</option>
+								<option value='Closed Enquiry' >Closed Enquiry</option>
+								<option value='Competition Bought' >Competition Bought</option>
+								<option value='Dummy Enquiry' >Dummy Enquiry</option>
+								<option value='Interested' >Interested</option>
+								<option value='Not Interested' >Not Interested</option>
+								<option value='Not Reachable' >Not Reachable</option>
+								<option value='Other Location Enquiry' >Other Location Enquiry</option>
+								<option value='Delivered' >Delivered</option>
+							</select>
+						</div>
+						<input type='hidden' name='dealer' value=Padmaja_KRSH />
+						<input type='hidden' name='customstart' value=2021-05-01 />
+						<input type='hidden' name='customend' value=2021-05-29 />
+						<input type='hidden' name='vehiclemodel' value=all />
+						<input type='hidden' name='campaigntype' value=all />
+						<input type='hidden' name='data' value='submit' />
+						<button type="submit" name="submit" value='submit' id="filtersubmit" class="open-button">Filter</button>
+						</form>
+						
+						
+				</div>
+                <div class="table-responsive">
+                    <table class="table zui-table res" id="t01">
+                        <thead class="thead-light">
+                            <tr>
+							  <th scope="col"  onclick="sortTable(0)" style="cursor: pointer;">S.No</th>
+							  <th onclick="sortTable(1)" style="cursor: pointer;">Date Of Enquiry</th>
+							  <th>Campaign Type</th>
+							  <th>Customer Name</th>
+							  <th>Contact Number</th>
+							  <th>Alt Number</th>
+							  <th>City</th>
+							  <th>District</th>
+							  <th>Model</th>
+							  <th>No Of Followups</th>
+							  <th>Test Ride</th>
+							  <th>AssignedTo</th>
+							  <th onclick="sortTable(12)" style="cursor: pointer;">DMS EnquiryStatus</th>
+							  <th>DMS EnquiryNumber</th>
+							  <th>Remarks</th>
+							  <th>Next FollowUp Date</th>	
+							  <th></th>
+							  <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable">
+						
+                    
+                
+                <tr id=11502 >
+					<td id='S.No'>1</td>
+					<td id='DateOfEnquiry'>26-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Yalamanchili Vijay</td>
+					<td id='ContactNumber'>9985008857</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer 250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>siva s</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21002149</td>
+					<td id='Comments'>,MONTH ENDING</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 10:28:03|,MONTH ENDING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11502>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11502></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11475 >
+					<td id='S.No'>2</td>
+					<td id='DateOfEnquiry'>26-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Nagaraju</td>
+					<td id='ContactNumber'>9160344141</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002131</td>
+					<td id='Comments'>NOT LIFTING</td>
+					<td id='FollowUpDate'>30-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:23:47|NOT LIFTING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11475>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11475></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11503 >
+					<td id='S.No'>3</td>
+					<td id='DateOfEnquiry'>26-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>K.sai Prasanth</td>
+					<td id='ContactNumber'>9542219636</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>H.junction</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>siva s</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002150</td>
+					<td id='Comments'>NOT REACHBLE</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 10:28:45|NOT REACHBLE"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11503>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11503></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11493 >
+					<td id='S.No'>4</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Babby</td>
+					<td id='ContactNumber'>8008431211</td>
+					<td id='AlternateContactNumber'>30000</td>
+					<td id='City'>Pamarru</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001900</td>
+					<td id='Comments'>OTHER LOCATOIN</td>
+					<td id='FollowUpDate'>30-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:24:46|OTHER LOCATOIN"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">civil Engineer</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11493>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11493></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11491 >
+					<td id='S.No'>5</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Prasad Thota</td>
+					<td id='ContactNumber'>9885688599</td>
+					<td id='AlternateContactNumber'>9885688599</td>
+					<td id='City'>Akividu</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21002133</td>
+					<td id='Comments'>CUSTOMER VISIT TO GUDIVADA</td>
+					<td id='FollowUpDate'>06-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:25:31|CUSTOMER VISIT TO GUDIVADA"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Employee</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11491>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11491></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11494 >
+					<td id='S.No'>6</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Moparthi Saikiran Chowdary</td>
+					<td id='ContactNumber'>9032905439</td>
+					<td id='AlternateContactNumber'>9985094999</td>
+					<td id='City'>Bhavanipuram</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>20001010</td>
+					<td id='Comments'>NOT REACHABLE</td>
+					<td id='FollowUpDate'>30-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:26:25|NOT REACHABLE"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11494>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11494></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11495 >
+					<td id='S.No'>7</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Chanti Sasi</td>
+					<td id='ContactNumber'>9298756789</td>
+					<td id='AlternateContactNumber'>9298756789</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002143</td>
+					<td id='Comments'>NOT REACHABLE</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:26:55|NOT REACHABLE"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11495>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11495></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11492 >
+					<td id='S.No'>8</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ramesh Babu</td>
+					<td id='ContactNumber'>9704247434</td>
+					<td id='AlternateContactNumber'>9704247434</td>
+					<td id='City'>Guntur</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001742</td>
+					<td id='Comments'>OTHER LOCATION</td>
+					<td id='FollowUpDate'>06-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:27:30|OTHER LOCATION"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11492>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11492></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11498 >
+					<td id='S.No'>9</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Kishore</td>
+					<td id='ContactNumber'>8428058468</td>
+					<td id='AlternateContactNumber'>8428058468</td>
+					<td id='City'>Gudivada</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21002144</td>
+					<td id='Comments'>OTHER LOCATION CUSTOMER VISIT TO GUDIVADA</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:28:36|OTHER LOCATION CUSTOMER VISIT TO GUDIVADA"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">employee</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11498>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11498></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11496 >
+					<td id='S.No'>10</td>
+					<td id='DateOfEnquiry'>25-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sukashi Kiran Kumar</td>
+					<td id='ContactNumber'>9392107129</td>
+					<td id='AlternateContactNumber'>9392107129</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002145</td>
+					<td id='Comments'>NOT LIFTING</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:29:10|NOT LIFTING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">civil.contrecter</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11496>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11496></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11497 >
+					<td id='S.No'>11</td>
+					<td id='DateOfEnquiry'>24-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sairam Ram</td>
+					<td id='ContactNumber'>9391099524</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>City</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002147</td>
+					<td id='Comments'>SWITCH OFF</td>
+					<td id='FollowUpDate'>31-May-2021</td>
+					<td id='FullComment' style="display:none;">["28-May-2021 08:29:56|SWITCH OFF"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">sai</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11497>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11497></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11409 >
+					<td id='S.No'>12</td>
+					<td id='DateOfEnquiry'>24-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Rajesh Raj</td>
+					<td id='ContactNumber'>9381054064</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayavada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>0</td>
+					<td id='Testride'> </td>
+					<td id='AssignedTo'>siva s</td>
+                    <td id='EnquiryStatus'></td>
+                    <td id='DMSEnquiryNumber'> </td>
+					<td id='Comments'></td>
+					<td id='FollowUpDate'></td>
+					<td id='FullComment' style="display:none;"> </td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">service</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11409>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11409></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11411 >
+					<td id='S.No'>13</td>
+					<td id='DateOfEnquiry'>24-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ashok Jetty</td>
+					<td id='ContactNumber'>7382927775</td>
+					<td id='AlternateContactNumber'>7382927775</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>20002648</td>
+					<td id='Comments'>Customer said he ill come to showroom on thursday</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:41:12|Customer said he ill come to showroom on thursday"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11411>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11411></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11412 >
+					<td id='S.No'>14</td>
+					<td id='DateOfEnquiry'>24-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Nari</td>
+					<td id='ContactNumber'>9966332157</td>
+					<td id='AlternateContactNumber'>9966332157</td>
+					<td id='City'>Jaggayyapeta</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002037</td>
+					<td id='Comments'>asking to call back tomorrow</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:41:55|asking to call back tomorrow"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">marketing</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11412>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11412></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11413 >
+					<td id='S.No'>15</td>
+					<td id='DateOfEnquiry'>24-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Nizam Uddin</td>
+					<td id='ContactNumber'>9396939973</td>
+					<td id='AlternateContactNumber'>786</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21002038</td>
+					<td id='Comments'>will plan to visit with in couple of days</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:43:24|will plan to visit with in couple of days"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11413>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11413></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11417 >
+					<td id='S.No'>16</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Naresh Smart</td>
+					<td id='ContactNumber'>8074931066</td>
+					<td id='AlternateContactNumber'>8074931066</td>
+					<td id='City'>Naresh Kampa</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002039</td>
+					<td id='Comments'>present busy asking to call back</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:44:02|present busy asking to call back"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">student</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11417>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11417></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11410 >
+					<td id='S.No'>17</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Prasad Arepalli</td>
+					<td id='ContactNumber'>8096876983</td>
+					<td id='AlternateContactNumber'>8096876983</td>
+					<td id='City'>Machilipatnam</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Intruder</td>
+					<td id='FollowUpCount'>0</td>
+					<td id='Testride'> </td>
+					<td id='AssignedTo'></td>
+                    <td id='EnquiryStatus'></td>
+                    <td id='DMSEnquiryNumber'> </td>
+					<td id='Comments'></td>
+					<td id='FollowUpDate'></td>
+					<td id='FullComment' style="display:none;"> </td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">driving</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11410>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11410></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11414 >
+					<td id='S.No'>18</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Rachakonda Srikanth</td>
+					<td id='ContactNumber'>9052156356</td>
+					<td id='AlternateContactNumber'>9052156356</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21002040</td>
+					<td id='Comments'>not Answering the call</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:44:39|not Answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">Farmer</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11414>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11414></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11415 >
+					<td id='S.No'>19</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sunendu Roy</td>
+					<td id='ContactNumber'>7416901178</td>
+					<td id='AlternateContactNumber'>7416901178</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>0</td>
+					<td id='Testride'> </td>
+					<td id='AssignedTo'></td>
+                    <td id='EnquiryStatus'></td>
+                    <td id='DMSEnquiryNumber'> </td>
+					<td id='Comments'></td>
+					<td id='FollowUpDate'></td>
+					<td id='FullComment' style="display:none;"> </td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">employ....</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11415>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11415></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11416 >
+					<td id='S.No'>20</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Raja Sekhar</td>
+					<td id='ContactNumber'>9494476041</td>
+					<td id='AlternateContactNumber'>9494476041</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Jahnavi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001893</td>
+					<td id='Comments'>planning after 2 months</td>
+					<td id='FollowUpDate'>05-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["26-May-2021 08:45:32|planning after 2 months"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">marketing</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11416>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11416></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11288 >
+					<td id='S.No'>21</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Narasimha Reddy</td>
+					<td id='ContactNumber'>9885651551</td>
+					<td id='AlternateContactNumber'>9885651551</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001905</td>
+					<td id='Comments'>he is not intrested</td>
+					<td id='FollowUpDate'>25-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 07:49:18|he is not intrested"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11288>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11288></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11289 >
+					<td id='S.No'>22</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Syed Subhani Altafsubhani</td>
+					<td id='ContactNumber'>9885935162</td>
+					<td id='AlternateContactNumber'>9885935162</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001907</td>
+					<td id='Comments'>customer not responding</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 07:50:31|customer not responding"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">catering</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11289>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11289></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11290 >
+					<td id='S.No'>23</td>
+					<td id='DateOfEnquiry'>23-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Jagadeesh Bolla</td>
+					<td id='ContactNumber'>9346170491</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Bandar</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21000273</td>
+					<td id='Comments'>Asking to call back</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 07:52:08|Asking to call back"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">no</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11290>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11290></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11332 >
+					<td id='S.No'>24</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Fayaz Mohammad</td>
+					<td id='ContactNumber'>9177574709</td>
+					<td id='AlternateContactNumber'>9177574709</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf250</td>
+					<td id='FollowUpCount'>2</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>20012629</td>
+					<td id='Comments'>Present he is busy said he ill call back</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 10:45:31|customer not answering the call","25-May-2021 07:52:46|Present he is busy said he ill call back"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">student</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11332>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11332></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11291 >
+					<td id='S.No'>25</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Shaik Shabashi</td>
+					<td id='ContactNumber'>9700372821</td>
+					<td id='AlternateContactNumber'>2524</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001909</td>
+					<td id='Comments'>customer is not answering the call properly </td>
+					<td id='FollowUpDate'>25-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 07:55:41|customer is not answering the call properly "]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">cooking master</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11291>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11291></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11292 >
+					<td id='S.No'>26</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sirisha Golla</td>
+					<td id='ContactNumber'>9347544611</td>
+					<td id='AlternateContactNumber'>9347566411</td>
+					<td id='City'>Thirumalagari</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Closed Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001605</td>
+					<td id='Comments'>repeated enquiry one numer switch off another number not answering properly</td>
+					<td id='FollowUpDate'>24-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 10:44:49|repeated enquiry one numer switch off another number not answering properly"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">u</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11292>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11292></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11293 >
+					<td id='S.No'>27</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ravindra Nath N</td>
+					<td id='ContactNumber'>7799483399</td>
+					<td id='AlternateContactNumber'>8886085666</td>
+					<td id='City'>Kanuru/VIJAYAWADA</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001920</td>
+					<td id='Comments'>he said he ill visit the showroom in couple of days</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 07:57:39|he said he ill visit the showroom in couple of days"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">rly salaried</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11293>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11293></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11294 >
+					<td id='S.No'>28</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Powerstar Vamsi</td>
+					<td id='ContactNumber'>9391129802</td>
+					<td id='AlternateContactNumber'>9391129802</td>
+					<td id='City'>Nuzvid</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Closed Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001921</td>
+					<td id='Comments'>customer already purchased vehicle one month back his enquiry was about spare parts</td>
+					<td id='FollowUpDate'>25-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:02:02|customer already purchased vehicle one month back his enquiry was about spare parts"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">riding</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11294>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11294></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11295 >
+					<td id='S.No'>29</td>
+					<td id='DateOfEnquiry'>22-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Pasupuleti Srinivas</td>
+					<td id='ContactNumber'>8309139326</td>
+					<td id='AlternateContactNumber'>8309139326</td>
+					<td id='City'>Ongole</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Thomas</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001896</td>
+					<td id='Comments'>customer planning to take in a week finance details provided will visit singhnagar branch</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:03:56|customer planning to take in a week finance details provided will visit singhnagar branch"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Bank Employee</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11295>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11295></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11341 >
+					<td id='S.No'>30</td>
+					<td id='DateOfEnquiry'>21-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Samuel Teja</td>
+					<td id='ContactNumber'>9948888110</td>
+					<td id='AlternateContactNumber'>9948888110</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001903</td>
+					<td id='Comments'>customer not answering the call</td>
+					<td id='FollowUpDate'>25-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 10:46:08|customer not answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">9948888110</td>
+					<td id='Profession' style="display:none;">tool maker</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11341>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11341></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11326 >
+					<td id='S.No'>31</td>
+					<td id='DateOfEnquiry'>21-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>V��? ?�p�?</td>
+					<td id='ContactNumber'>9441066945</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001922</td>
+					<td id='Comments'>customer venugopal planning to take in a month hesaid he ill visit one town showroom</td>
+					<td id='FollowUpDate'>05-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:05:04|customer venugopal planning to take in a month hesaid he ill visit one town showroom"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">venugopalgajjala2327@gmail.com</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11326>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11326></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11327 >
+					<td id='S.No'>32</td>
+					<td id='DateOfEnquiry'>21-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>J.sai Kumar</td>
+					<td id='ContactNumber'>8008790712</td>
+					<td id='AlternateContactNumber'>8008790712</td>
+					<td id='City'>Mylavaram</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>Ramesh</td>
+                    <td id='EnquiryStatus'>Delivered</td>
+                    <td id='DMSEnquiryNumber'>21001516</td>
+					<td id='Comments'>delivered at Mylavaram</td>
+					<td id='FollowUpDate'>24-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 09:42:10|delivered at Mylavaram"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">student</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11327>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11327></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11328 >
+					<td id='S.No'>33</td>
+					<td id='DateOfEnquiry'>21-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ravikumar Kali</td>
+					<td id='ContactNumber'>9977919919</td>
+					<td id='AlternateContactNumber'>9977919919</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001924</td>
+					<td id='Comments'>customer disconnecting the call</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:05:52|customer disconnecting the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">GOVT EMPLOYEE</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11328>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11328></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11217 >
+					<td id='S.No'>34</td>
+					<td id='DateOfEnquiry'>20-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Triveni Hassain</td>
+					<td id='ContactNumber'>9154615018</td>
+					<td id='AlternateContactNumber'>8886465103</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001925</td>
+					<td id='Comments'>not intrested</td>
+					<td id='FollowUpDate'>25-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:06:22|not intrested"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">Chef</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11217>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11217></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11194 >
+					<td id='S.No'>35</td>
+					<td id='DateOfEnquiry'>20-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ramakrishna Mulla</td>
+					<td id='ContactNumber'>9700755134</td>
+					<td id='AlternateContactNumber'>7399664444</td>
+					<td id='City'>P:+919700755134</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001926</td>
+					<td id='Comments'>not answering the call</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:07:54|not answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11194>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11194></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11195 >
+					<td id='S.No'>36</td>
+					<td id='DateOfEnquiry'>20-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Prasad Rao</td>
+					<td id='ContactNumber'>9533258899</td>
+					<td id='AlternateContactNumber'>9533258899</td>
+					<td id='City'>P:+919533258899</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Prakash</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21000207</td>
+					<td id='Comments'>customer said he ill visit to the showroom today</td>
+					<td id='FollowUpDate'>24-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 09:28:53|customer said he ill visit to the showroom today"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11195>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11195></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11218 >
+					<td id='S.No'>37</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Syed Munna</td>
+					<td id='ContactNumber'>9133925997</td>
+					<td id='AlternateContactNumber'>9133925997</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001945</td>
+					<td id='Comments'>customer is planning for next month</td>
+					<td id='FollowUpDate'>05-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 08:18:38|customer is planning for next month"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">salyry</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11218>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11218></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11174 >
+					<td id='S.No'>38</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Bharath Dodda</td>
+					<td id='ContactNumber'>8885188348</td>
+					<td id='AlternateContactNumber'>6303013567</td>
+					<td id='City'>Vuyyuru</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001829</td>
+					<td id='Comments'>he said he ill call ack as he was busy</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:55:08|he said he ill call ack as he was busy"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Electrician</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11174>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11174></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11175 >
+					<td id='S.No'>39</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Phani Kumar</td>
+					<td id='ContactNumber'>9397939339</td>
+					<td id='AlternateContactNumber'>9397939339</td>
+					<td id='City'>Machlipatam</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>2</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001830</td>
+					<td id='Comments'>he said he ill visit today showroom</td>
+					<td id='FollowUpDate'>24-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:53:55|nor answering the call","24-May-2021 09:47:03|he said he ill visit today showroom"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">hi</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11175>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11175></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11176 >
+					<td id='S.No'>40</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Rajendra Naidu</td>
+					<td id='ContactNumber'>9392890185</td>
+					<td id='AlternateContactNumber'>9392890185</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001831</td>
+					<td id='Comments'>provided details as per customer requirement needs some time to decide</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:52:41|provided details as per customer requirement needs some time to decide"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Student</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11176>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11176></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11177 >
+					<td id='S.No'>41</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Prasad GLChSVS</td>
+					<td id='ContactNumber'>9493552911</td>
+					<td id='AlternateContactNumber'>9493552911</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001832</td>
+					<td id='Comments'>provided details as per customer requirement needs some time to decide</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:52:02|provided details as per customer requirement needs some time to decide"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Press</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11177>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11177></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11178 >
+					<td id='S.No'>42</td>
+					<td id='DateOfEnquiry'>19-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Viswanth Vemuri</td>
+					<td id='ContactNumber'>9494855385</td>
+					<td id='AlternateContactNumber'>8099996656</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001833</td>
+					<td id='Comments'>provided details as per his requirement he said he ill decide</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:46:49|provided details as per his requirement he said he ill decide"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">bussiness</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11178>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11178></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11172 >
+					<td id='S.No'>43</td>
+					<td id='DateOfEnquiry'>18-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Melaka Jenjallu Madhiga</td>
+					<td id='ContactNumber'>9573642744</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Ashok</td>
+                    <td id='EnquiryStatus'>Closed Enquiry</td>
+                    <td id='DMSEnquiryNumber'>0</td>
+					<td id='Comments'>customer saying wrong number</td>
+					<td id='FollowUpDate'>24-May-2021</td>
+					<td id='FullComment' style="display:none;">["24-May-2021 09:50:06|customer saying wrong number"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">yes</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11172>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11172></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11133 >
+					<td id='S.No'>44</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ashok Bingineni</td>
+					<td id='ContactNumber'>7675009120</td>
+					<td id='AlternateContactNumber'>7675009120</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>kiran[ekp]</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001964</td>
+					<td id='Comments'>customer planning in first week of june</td>
+					<td id='FollowUpDate'>05-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 09:05:00|customer planning in first week of june"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Employee</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11133>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11133></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11135 >
+					<td id='S.No'>45</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Babli</td>
+					<td id='ContactNumber'>9491273499</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Gudivada</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001982</td>
+					<td id='Comments'>customer not answering the call</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 09:13:34|customer not answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">car machine</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11135>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11135></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11134 >
+					<td id='S.No'>46</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Vasu Vasu</td>
+					<td id='ContactNumber'>8143653775</td>
+					<td id='AlternateContactNumber'>9014413317</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001980</td>
+					<td id='Comments'>customer out of network area</td>
+					<td id='FollowUpDate'>26-May-2021</td>
+					<td id='FullComment' style="display:none;">["25-May-2021 09:14:22|customer out of network area"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">accountant</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11134>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11134></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11072 >
+					<td id='S.No'>47</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Chintalapudi Srinu Prakash</td>
+					<td id='ContactNumber'>9848556634</td>
+					<td id='AlternateContactNumber'>1</td>
+					<td id='City'>Vijayavada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Intruder</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001739</td>
+					<td id='Comments'>ASKING TO CALL BACK AFTER JUNE 5TH</td>
+					<td id='FollowUpDate'>05-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["18-May-2021 09:14:57|ASKING TO CALL BACK AFTER JUNE 5TH"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">self</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11072>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11072></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11070 >
+					<td id='S.No'>48</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Radhika Rani</td>
+					<td id='ContactNumber'>9491207090</td>
+					<td id='AlternateContactNumber'>9705969286</td>
+					<td id='City'>Nuzvid</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Dummy Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001844</td>
+					<td id='Comments'>WRONG NUMBER</td>
+					<td id='FollowUpDate'>28-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:32:14|WRONG NUMBER"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Teacher</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11070>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11070></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11064 >
+					<td id='S.No'>49</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ravi Darling</td>
+					<td id='ContactNumber'>8639215315</td>
+					<td id='AlternateContactNumber'>8639215315</td>
+					<td id='City'>Nuzvide</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Burgman Street</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Dummy Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001845</td>
+					<td id='Comments'>NOT ANSWRING</td>
+					<td id='FollowUpDate'>29-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:34:09|NOT ANSWRING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">Good</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11064>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11064></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11071 >
+					<td id='S.No'>50</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sunny Medabalimi</td>
+					<td id='ContactNumber'>7416842258</td>
+					<td id='AlternateContactNumber'>7416842258</td>
+					<td id='City'>Gudivada</td>
+					<td id='District'>Krishna </td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Dummy Enquiry</td>
+                    <td id='DMSEnquiryNumber'>210018446</td>
+					<td id='Comments'>THIS MONTH ENDING</td>
+					<td id='FollowUpDate'>30-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:37:35|THIS MONTH ENDING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11071>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11071></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11065 >
+					<td id='S.No'>51</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>G.Sainath</td>
+					<td id='ContactNumber'>9703598592</td>
+					<td id='AlternateContactNumber'>9703598592</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001848</td>
+					<td id='Comments'>NEXTWEEK</td>
+					<td id='FollowUpDate'>03-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:38:20|NEXTWEEK"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">own business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11065>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11065></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11066 >
+					<td id='S.No'>52</td>
+					<td id='DateOfEnquiry'>17-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>S�gG�d� �a�� G�d�</td>
+					<td id='ContactNumber'>9063293956</td>
+					<td id='AlternateContactNumber'>9063293956</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Dummy Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001847</td>
+					<td id='Comments'>NOT LIFTING</td>
+					<td id='FollowUpDate'>29-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:39:08|NOT LIFTING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">nani babu</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11066>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11066></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11067 >
+					<td id='S.No'>53</td>
+					<td id='DateOfEnquiry'>16-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Naga Babu Pinnenti</td>
+					<td id='ContactNumber'>9573551076</td>
+					<td id='AlternateContactNumber'>9573551076</td>
+					<td id='City'>Machilipatnam</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21000264</td>
+					<td id='Comments'>OTHER LOCATION</td>
+					<td id='FollowUpDate'>28-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:40:15|OTHER LOCATION"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11067>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11067></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11068 >
+					<td id='S.No'>54</td>
+					<td id='DateOfEnquiry'>16-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Lokesh Parnam</td>
+					<td id='ContactNumber'>9100842461</td>
+					<td id='AlternateContactNumber'>9100842461</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001849</td>
+					<td id='Comments'>OTHER LOCATION</td>
+					<td id='FollowUpDate'>29-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:40:51|OTHER LOCATION"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">job holder</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11068>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11068></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=11069 >
+					<td id='S.No'>55</td>
+					<td id='DateOfEnquiry'>16-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Pandu Rangarao</td>
+					<td id='ContactNumber'>9494530925</td>
+					<td id='AlternateContactNumber'>9494530925</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>SANTHI</td>
+                    <td id='EnquiryStatus'>Dummy Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001850</td>
+					<td id='Comments'>NOT LIFTING</td>
+					<td id='FollowUpDate'>30-May-2021</td>
+					<td id='FullComment' style="display:none;">["22-May-2021 08:41:22|NOT LIFTING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">retd. govt employee</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=11069>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=11069></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10991 >
+					<td id='S.No'>56</td>
+					<td id='DateOfEnquiry'>15-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Eenus Baig</td>
+					<td id='ContactNumber'>9642254606</td>
+					<td id='AlternateContactNumber'>9642254606</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer 250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001711</td>
+					<td id='Comments'>NOT ANSWERING THE CALL</td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["18-May-2021 09:15:49|NOT ANSWERING THE CALL"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">lab technician</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10991>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10991></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10984 >
+					<td id='S.No'>57</td>
+					<td id='DateOfEnquiry'>15-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Abhinay Nishanth</td>
+					<td id='ContactNumber'>9121716171</td>
+					<td id='AlternateContactNumber'>9121716171</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001712</td>
+					<td id='Comments'>asking to call back</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:09:51|asking to call back"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10984>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10984></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10985 >
+					<td id='S.No'>58</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Tarak A</td>
+					<td id='ContactNumber'>9059000878</td>
+					<td id='AlternateContactNumber'>9059000878</td>
+					<td id='City'>Machilipatnam</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Burgman Street</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>Yes</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>20001124</td>
+					<td id='Comments'>Not Answering the call</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:11:47|Not Answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">self employed</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10985>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10985></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10986 >
+					<td id='S.No'>59</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sai Krishna</td>
+					<td id='ContactNumber'>9246600924</td>
+					<td id='AlternateContactNumber'>8074739795</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001714</td>
+					<td id='Comments'>asking to call back </td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:13:43|asking to call back "]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">business</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10986>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10986></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10987 >
+					<td id='S.No'>60</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Aravind Reddy</td>
+					<td id='ContactNumber'>9381385193</td>
+					<td id='AlternateContactNumber'>9381385193</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001715</td>
+					<td id='Comments'>need a week time to decide</td>
+					<td id='FollowUpDate'>27-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:14:56|need a week time to decide"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">sales manager</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10987>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10987></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10988 >
+					<td id='S.No'>61</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Madan Kumar</td>
+					<td id='ContactNumber'>9052640730</td>
+					<td id='AlternateContactNumber'>9052640730</td>
+					<td id='City'>Vijayavada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001716</td>
+					<td id='Comments'>asking to call back when offers are in live</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:16:20|asking to call back when offers are in live"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">Marketing</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10988>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10988></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10989 >
+					<td id='S.No'>62</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Kotla Kishore Kumar</td>
+					<td id='ContactNumber'>9652941196</td>
+					<td id='AlternateContactNumber'>9652941196</td>
+					<td id='City'>Mangalagiri</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001717</td>
+					<td id='Comments'>present not answering the call</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:17:07|present not answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">carpentar</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10989>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10989></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10990 >
+					<td id='S.No'>63</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ramakrishna Mannam</td>
+					<td id='ContactNumber'>8686497722</td>
+					<td id='AlternateContactNumber'>8686497722</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001718</td>
+					<td id='Comments'>need some time</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:18:58|need some time"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10990>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10990></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10856 >
+					<td id='S.No'>64</td>
+					<td id='DateOfEnquiry'>14-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Tirupathi Reddy</td>
+					<td id='ContactNumber'>7569331735</td>
+					<td id='AlternateContactNumber'>9494333295</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001321</td>
+					<td id='Comments'>not answering the call</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:23:08|not answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">y</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10856>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10856></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10857 >
+					<td id='S.No'>65</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Venkata Chiranjeevi Meesala</td>
+					<td id='ContactNumber'>9642404053</td>
+					<td id='AlternateContactNumber'>9642404053</td>
+					<td id='City'>Vinukonda</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001721</td>
+					<td id='Comments'>not intrested</td>
+					<td id='FollowUpDate'>21-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:24:51|not intrested"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">advocate</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10857>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10857></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10889 >
+					<td id='S.No'>66</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>K Rasool</td>
+					<td id='ContactNumber'>9959711770</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001740</td>
+					<td id='Comments'>PRESENT NOT INTRESTED</td>
+					<td id='FollowUpDate'>18-May-2021</td>
+					<td id='FullComment' style="display:none;">["18-May-2021 09:16:30|PRESENT NOT INTRESTED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">jj</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10889>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10889></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10858 >
+					<td id='S.No'>67</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Man�kanta D��</td>
+					<td id='ContactNumber'>7337262899</td>
+					<td id='AlternateContactNumber'>7337262899</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001816</td>
+					<td id='Comments'>asking to call back in 15days</td>
+					<td id='FollowUpDate'>01-Jun-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:26:25|asking to call back in 15days"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">ot tech</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10858>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10858></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10859 >
+					<td id='S.No'>68</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Naresh Medisetti</td>
+					<td id='ContactNumber'>9666005984</td>
+					<td id='AlternateContactNumber'>9666005984</td>
+					<td id='City'>Nimmakuru</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001817</td>
+					<td id='Comments'>not Answering the call</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:28:16|not Answering the call"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"></td>
+					<td id='Profession' style="display:none;"></td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10859>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10859></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10817 >
+					<td id='S.No'>69</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ramesh Babu</td>
+					<td id='ContactNumber'>9704247434</td>
+					<td id='AlternateContactNumber'>8309045241</td>
+					<td id='City'>Guntur</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001742</td>
+					<td id='Comments'>LOOKING FOR ACCESS DETAILS PROVIDED</td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["18-May-2021 09:17:26|LOOKING FOR ACCESS DETAILS PROVIDED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10817>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10817></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10795 >
+					<td id='S.No'>70</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Kesavsaigumpena Kesavsaigumpena</td>
+					<td id='ContactNumber'>9848432940</td>
+					<td id='AlternateContactNumber'>9848432940</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>21001818</td>
+					<td id='Comments'>taken delivery at Mangalagiri</td>
+					<td id='FollowUpDate'>21-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 10:25:27|taken delivery at Mangalagiri"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">marketing</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10795>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10795></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10796 >
+					<td id='S.No'>71</td>
+					<td id='DateOfEnquiry'>13-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Jagadish Agni</td>
+					<td id='ContactNumber'>9247915812</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>Rupa</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001819</td>
+					<td id='Comments'>he is asking the he need some time to confirm</td>
+					<td id='FollowUpDate'>21-May-2021</td>
+					<td id='FullComment' style="display:none;">["21-May-2021 09:29:39|he is asking the he need some time to confirm"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">travel</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10796>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10796></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10797 >
+					<td id='S.No'>72</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Muthyala Mahendra</td>
+					<td id='ContactNumber'>7780495721</td>
+					<td id='AlternateContactNumber'>7780495721</td>
+					<td id='City'>Bantumilli</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ21001726</td>
+					<td id='Comments'>NOT INTRESTED 
+</td>
+					<td id='FollowUpDate'>18-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:44:49|NOT INTRESTED \r\n"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">a small job in vcf</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10797>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10797></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10794 >
+					<td id='S.No'>73</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Anumolu Thavee Saichandra</td>
+					<td id='ContactNumber'>+19492474189</td>
+					<td id='AlternateContactNumber'>9381894359</td>
+					<td id='City'>Krouse</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Intruder</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT ANSWERING</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:15:48|NOT ANSWERING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">anumoluthavee@gmail.com</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10794>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10794></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10714 >
+					<td id='S.No'>74</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Naveen Mukkamala</td>
+					<td id='ContactNumber'>9666465999</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vissannapeta</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Other Location Enquiry</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>mylavaram plaing</td>
+					<td id='FollowUpDate'>18-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:43:40|mylavaram plaing"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10714>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10714></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10730 >
+					<td id='S.No'>75</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Baji Baba</td>
+					<td id='ContactNumber'>9515972944</td>
+					<td id='AlternateContactNumber'>9515972944</td>
+					<td id='City'>Krishna</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer 250</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>J NAVEEN</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>JUST FOR ENQUERY</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:17:11|JUST FOR ENQUERY"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">1_month</td>
+					<td id='Profession' style="display:none;">klunivercity</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10730>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10730></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10715 >
+					<td id='S.No'>76</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Vandana Kagitha</td>
+					<td id='ContactNumber'>9542926129</td>
+					<td id='AlternateContactNumber'>9542926129</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT INTRESTED</td>
+					<td id='FollowUpDate'>17-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:46:31|NOT INTRESTED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10715>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10715></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10716 >
+					<td id='S.No'>77</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Naveen</td>
+					<td id='ContactNumber'>8121222209</td>
+					<td id='AlternateContactNumber'>8121222209</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>SWITCHED OFF</td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:47:30|SWITCHED OFF"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10716>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10716></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10731 >
+					<td id='S.No'>78</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Sandeep</td>
+					<td id='ContactNumber'>7799526252</td>
+					<td id='AlternateContactNumber'>7799526252</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>J NAVEEN</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT INTRESTED</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:18:15|NOT INTRESTED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">assistant professor</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10731>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10731></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10717 >
+					<td id='S.No'>79</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Rama Sumanth Gopisetty</td>
+					<td id='ContactNumber'>9030604342</td>
+					<td id='AlternateContactNumber'>9030604342</td>
+					<td id='City'>Tenali</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT RECHBUL</td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:48:59|NOT RECHBUL"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10717>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10717></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10718 >
+					<td id='S.No'>80</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Lucky Sai</td>
+					<td id='ContactNumber'>9346382334</td>
+					<td id='AlternateContactNumber'>9346382334</td>
+					<td id='City'>Gudivada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>JUST FOR ENQUERY</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:51:10|JUST FOR ENQUERY"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10718>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10718></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10719 >
+					<td id='S.No'>81</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>V Bhagyalakshmi</td>
+					<td id='ContactNumber'>8501801850</td>
+					<td id='AlternateContactNumber'>8501801850</td>
+					<td id='City'>Tadepalligudem</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>CUSTMER NEYR BY NUZIVDU</td>
+					<td id='FollowUpDate'>21-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:52:26|CUSTMER NEYR BY NUZIVDU"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10719>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10719></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10720 >
+					<td id='S.No'>82</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Rihan Khan</td>
+					<td id='ContactNumber'>7032434124</td>
+					<td id='AlternateContactNumber'>7032434124</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT REACHBUL </td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:56:18|NOT REACHBUL "]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10720>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10720></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10721 >
+					<td id='S.No'>83</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Srinadhkumar</td>
+					<td id='ContactNumber'>9492977319</td>
+					<td id='AlternateContactNumber'>9492977319</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>ONE WEEK PLAING </td>
+					<td id='FollowUpDate'>23-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:57:41|ONE WEEK PLAING "]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10721>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10721></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10722 >
+					<td id='S.No'>84</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sirisha Golla</td>
+					<td id='ContactNumber'>9347544611</td>
+					<td id='AlternateContactNumber'>9347566411</td>
+					<td id='City'>Thirumalagari</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>J NAVEEN</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT ANSWERING</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:19:27|NOT ANSWERING"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10722>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10722></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10723 >
+					<td id='S.No'>85</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Addankisatishkumar</td>
+					<td id='ContactNumber'>9441347989</td>
+					<td id='AlternateContactNumber'>9441347989</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>JUST FOR ENQUERY</td>
+					<td id='FollowUpDate'>17-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 10:59:35|JUST FOR ENQUERY"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10723>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10723></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10724 >
+					<td id='S.No'>86</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Bhanu Kiran</td>
+					<td id='ContactNumber'>9550731996</td>
+					<td id='AlternateContactNumber'>9550731996</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT ANSWERING </td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:00:41|NOT ANSWERING "]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10724>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10724></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10725 >
+					<td id='S.No'>87</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Man�kanta D��</td>
+					<td id='ContactNumber'>9390228192</td>
+					<td id='AlternateContactNumber'>7337262899</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT INTRESTED</td>
+					<td id='FollowUpDate'>21-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:05:26|NOT INTRESTED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10725>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10725></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10726 >
+					<td id='S.No'>88</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Pittu Hemanth Reddy</td>
+					<td id='ContactNumber'>7337292042</td>
+					<td id='AlternateContactNumber'>8328375971</td>
+					<td id='City'>Tenali</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>JUST FOR ENQUERY</td>
+					<td id='FollowUpDate'>20-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:06:44|JUST FOR ENQUERY"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10726>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10726></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10727 >
+					<td id='S.No'>89</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Shaik Shaksha Vali</td>
+					<td id='ContactNumber'>9849326268</td>
+					<td id='AlternateContactNumber'>9052143202</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>SWETCHED OFF</td>
+					<td id='FollowUpDate'>22-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:08:05|SWETCHED OFF"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10727>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10727></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10728 >
+					<td id='S.No'>90</td>
+					<td id='DateOfEnquiry'>12-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>M Vijaykumar Vijaykumar</td>
+					<td id='ContactNumber'>9493017790</td>
+					<td id='AlternateContactNumber'>9493017790</td>
+					<td id='City'>Mangalagiri</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>NOT INTRETED</td>
+					<td id='FollowUpDate'>19-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:08:52|NOT INTRETED"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10728>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10728></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10729 >
+					<td id='S.No'>91</td>
+					<td id='DateOfEnquiry'>11-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Haneef Syed</td>
+					<td id='ContactNumber'>9494262521</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>KRISHNAVENI</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>ENQ2100</td>
+					<td id='Comments'>JUST FOR ENQUERY</td>
+					<td id='FollowUpDate'>23-May-2021</td>
+					<td id='FullComment' style="display:none;">["17-May-2021 11:20:55|JUST FOR ENQUERY"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10729>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10729></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10692 >
+					<td id='S.No'>92</td>
+					<td id='DateOfEnquiry'>11-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Kandula Venkatesh</td>
+					<td id='ContactNumber'>7989452541</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001600</td>
+					<td id='Comments'>needs pre-owned vehicle</td>
+					<td id='FollowUpDate'>12-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:49:49|needs pre-owned vehicle"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10692>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10692></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10693 >
+					<td id='S.No'>93</td>
+					<td id='DateOfEnquiry'>11-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Ch Sudheer Ch</td>
+					<td id='ContactNumber'>7569360004</td>
+					<td id='AlternateContactNumber'>7569360004</td>
+					<td id='City'>Tippanagunta</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001601</td>
+					<td id='Comments'>switched off</td>
+					<td id='FollowUpDate'>13-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:50:32|switched off"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10693>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10693></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10694 >
+					<td id='S.No'>94</td>
+					<td id='DateOfEnquiry'>11-May-2021</td>
+					<td id='CampaignType'>RegularCampaign</td>
+					<td id='CustomerName'>Sridhar Babu</td>
+					<td id='ContactNumber'>9573101459</td>
+					<td id='AlternateContactNumber'>9573101459</td>
+					<td id='City'>Vijayawada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Access 125</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>swathi</td>
+                    <td id='EnquiryStatus'>Interested</td>
+                    <td id='DMSEnquiryNumber'>21001602</td>
+					<td id='Comments'>may visit this week</td>
+					<td id='FollowUpDate'>14-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:51:11|may visit this week"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"> </td>
+					<td id='Profession' style="display:none;"> </td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10694>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10694></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10697 >
+					<td id='S.No'>95</td>
+					<td id='DateOfEnquiry'>11-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Abdul</td>
+					<td id='ContactNumber'>9491888336</td>
+					<td id='AlternateContactNumber'>9491888336</td>
+					<td id='City'>Gudivada</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21000602</td>
+					<td id='Comments'>switched off</td>
+					<td id='FollowUpDate'>13-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:52:08|switched off"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">job</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10697>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10697></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10685 >
+					<td id='S.No'>96</td>
+					<td id='DateOfEnquiry'>09-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Nani Darling</td>
+					<td id='ContactNumber'>9502649341</td>
+					<td id='AlternateContactNumber'>9502649341</td>
+					<td id='City'>Khalekhanpet</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001604</td>
+					<td id='Comments'>not seen for any vehicle</td>
+					<td id='FollowUpDate'>12-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:53:18|not seen for any vehicle"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">2_months</td>
+					<td id='Profession' style="display:none;">student</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10685>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10685></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10686 >
+					<td id='S.No'>97</td>
+					<td id='DateOfEnquiry'>08-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Sirisha Golla</td>
+					<td id='ContactNumber'>9347544611</td>
+					<td id='AlternateContactNumber'></td>
+					<td id='City'>Thirumalagari</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Reachable</td>
+                    <td id='DMSEnquiryNumber'>21001605</td>
+					<td id='Comments'>switched off</td>
+					<td id='FollowUpDate'>12-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:53:45|switched off"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;">within_15_days</td>
+					<td id='Profession' style="display:none;">j</td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10686>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10686></td>
+                </tr>
+				
+				
+				 
+                    
+                
+                <tr id=10687 >
+					<td id='S.No'>98</td>
+					<td id='DateOfEnquiry'>08-May-2021</td>
+					<td id='CampaignType'>MotorCycle</td>
+					<td id='CustomerName'>Jamalaiah Mandala</td>
+					<td id='ContactNumber'>7680806949</td>
+					<td id='AlternateContactNumber'>7680806949</td>
+					<td id='City'>Vijayawada.</td>
+					<td id='District'>Krishna</td>
+					<td id='Model'>Gixxer Sf</td>
+					<td id='FollowUpCount'>1</td>
+					<td id='Testride'>No</td>
+					<td id='AssignedTo'>praveen</td>
+                    <td id='EnquiryStatus'>Not Interested</td>
+                    <td id='DMSEnquiryNumber'>21001607</td>
+					<td id='Comments'>number not in use</td>
+					<td id='FollowUpDate'>12-May-2021</td>
+					<td id='FullComment' style="display:none;">["12-May-2021 10:54:18|number not in use"]</td>
+					<td id='PreviousVehicle' style="display:none;"> </td>
+					<td id='PlanningtoBuy' style="display:none;"></td>
+					<td id='Profession' style="display:none;"></td>
+					<input type="hidden" name="tablerow" id="tablerow" value=10687>
+					<td id='EditButton'><i class="fa fa-edit" style="color:#efb81b"></i></td>
+					<td id = 'bulkupdate'><Input type="checkbox" value=10687></td>
+                </tr>
+				
+				
+				 				</tbody>
+				</table>
+				<button class="btn btn-danger" id='bulkedit'>Bulk Assign</button>
+				<div style="display: none;" id = 'bulkassigneddiv' class='py-2'>
+					<input class="filename" type='text' name='bulkassigned' id='bulkassigned' Placeholder="Assigned To" required></input>
+					<button type="submit" name="assigupdate" value='assigupdate' id="assignupdate" class="open-button">Assign</button>
+					<button type="reset" name="cancelassign" value='Reset' id="cancelassign" class="open-button">Cancel</button>
+				</div>
+                </div>
+            </div>
+        </section>
+ </main>
+    <footer id="footer">
+        <div class="container">
+            &copy; Copyright <strong><span>Pramaan Marketing 2021</span></strong>. All Rights Reserved
+        </div>
+    </footer>
+</body>
+<section class="popbox group" id="popbox">
+    <div class="popup">
+     <div class="popup-inner">
+       <p class="title">Lead Details</p>
+	   
+			<form action="inlineedit.php" method="post" id="inlineeditform">
+			<input type="hidden" name="destination" value="/campaign/admincustomdata.php?dealer=Padmaja_KRSH&customstart=2021-05-01&customend=2021-05-29&vehiclemodel=all&campaigntype=all&data=submit"/>
+			<div class="row">
+                <div class="left-sec col-sm-12 col-lg-6" style="font-size:13px">
+                	<div class="row">
+                		<div class="col-5 form-left-col"></div>
+                		<div class="col-7 form-right-col"></div>
+                	</div>
+                </div>
+                <div class="right-sec col-sm-12 col-lg-6">
+                	<div class="remarks-section"></div>
+					<div class="row">
+                		<div class="col-6 rightform-left-col"></div>
+                		<div class="col-6 rightform-right-col"></div>
+                	</div>
+				</div>
+            </div>
+			</form>
+           <a class="close" href="#">x</a>
+        </div>
+      </div>
+    </section> 
+	
+	
+	
+<script src="file.js"></script>
+<script>  
+ $(document).ready(function(){  
+      $('#create_excel').click(function(){  
+          
+		var filename = $('#filename').val();
+		filename = filename + ".csv";
+        var data='';
+        var myTab = document.getElementById('t01');
+
+        // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+        for (i = 0; i < myTab.rows.length; i++) {
+
+            // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+            var objCells = myTab.rows.item(i).cells;
+
+            // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+            for (var j = 0; j < objCells.length - 3; j++) {
+				data +=  objCells.item(j).innerHTML+',';
+			}
+            data= data + '\r\n';     // ADD A BREAK (TAG).
+	
+        }
+    
+  function downloadContent(name, content) {
+  var atag = document.createElement("a");
+  var file = new Blob([content], {type: 'text/csv;charset=utf-8'});
+  atag.href = URL.createObjectURL(file);
+  atag.download = name;
+  atag.click();
+}
+
+downloadContent(filename,data);
+// Write data in 'Output.txt' . 
+ 
+      });  
+ });  
+ </script>
+</html>
