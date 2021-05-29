@@ -568,7 +568,10 @@ td#Comments
 
 
 }
-
+.table-responsive
+{
+	overflow: hidden;
+}
 
 
 
