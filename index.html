@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="EN">
 <head>
@@ -12,6 +11,10 @@
     <link rel="stylesheet" href="campaign.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+<!-- ggr -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 
 </head>
 <body>
@@ -62,21 +65,29 @@
         <section class="py-3">
             <div class="container">
                 <div class="row m-0" style="justify-content: space-between;">
-                    <div class="pb-3">
+                    <div class="pb-3 ">
                         <h1 style="font-size:32px">Padmaja Suzuki Krishna</h>
                     </div>
-                    <div class="pb-3">
-                        <label>Filename : </label>
+                    <div class="pb-3 space">
+                        <!-- <label>Filename : </label> -->
+                       
 						<input class="filename" type='text' name='dfilename' id='filename' Placeholder="Filename" required></input>
-                        <button class="open-button" id="create_excel">Download file </button>
+						
+						 
+                        <button class="open-button butt " id="create_excel">Download file </button>
+                        <i class="fa fa-download"></i>
                     </div>
                 </div>
-                 <div style="display: flex; justify-content: flex-end; max-width:200px; float:right;">
-					<button type="reset" name="reset" value='Reset' id="configreset" class="open-button">Reset</button>
-				</div>
+
+				
+                
 				<div class="pb-3">
 												<form id="configform"  name='filterform' action='' method='GET' class = 'form-inline'>
-						<div class='form-group pr-2'><select class='form-control input-sm' name ='enquiry_date' id='enquiry_date'><option value='' selected='selected'>Select Date</option><option value='2021-05-08'>08-May-2021</option><option value='2021-05-09'>09-May-2021</option><option value='2021-05-11'>11-May-2021</option><option value='2021-05-12'>12-May-2021</option><option value='2021-05-13'>13-May-2021</option><option value='2021-05-14'>14-May-2021</option><option value='2021-05-15'>15-May-2021</option><option value='2021-05-16'>16-May-2021</option><option value='2021-05-17'>17-May-2021</option><option value='2021-05-18'>18-May-2021</option><option value='2021-05-19'>19-May-2021</option><option value='2021-05-20'>20-May-2021</option><option value='2021-05-21'>21-May-2021</option><option value='2021-05-22'>22-May-2021</option><option value='2021-05-23'>23-May-2021</option><option value='2021-05-24'>24-May-2021</option><option value='2021-05-25'>25-May-2021</option><option value='2021-05-26'>26-May-2021</option></select></div><div class='form-group pr-2'><select class='form-control input-sm' name ='city'><option value=''>Select City</option><option value='Akividu'>Akividu</option><option value='Bandar'>Bandar</option><option value='bantumilli'>Bantumilli</option><option value='Bhavanipuram'>Bhavanipuram</option><option value='city'>City</option><option value='Gudivada'>Gudivada</option><option value='Guntur'>Guntur</option><option value='h.junction'>H.junction</option><option value='jaggayyapeta'>Jaggayyapeta</option><option value='Kanuru/VIJAYAWADA'>Kanuru/VIJAYAWADA</option><option value='khalekhanpet'>Khalekhanpet</option><option value='krishna'>Krishna</option><option value='krouse'>Krouse</option><option value='Machilipatnam'>Machilipatnam</option><option value='machlipatam'>Machlipatam</option><option value='Mangalagiri'>Mangalagiri</option><option value='Mylavaram'>Mylavaram</option><option value='Naresh Kampa'>Naresh Kampa</option><option value='Nimmakuru'>Nimmakuru</option><option value='Nuzvid'>Nuzvid</option><option value='Nuzvide'>Nuzvide</option><option value='ongole'>Ongole</option><option value='p:+919533258899'>P:+919533258899</option><option value='p:+919700755134'>P:+919700755134</option><option value='pamarru'>Pamarru</option><option value='tadepalligudem'>Tadepalligudem</option><option value='Tenali'>Tenali</option><option value='Thirumalagari'>Thirumalagari</option><option value='Tippanagunta'>Tippanagunta</option><option value='Vijayavada'>Vijayavada</option><option value='Vijayawada'>Vijayawada</option><option value='vijayawada.'>Vijayawada.</option><option value='vinukonda'>Vinukonda</option><option value='Vissannapeta'>Vissannapeta</option><option value='vuyyuru'>Vuyyuru</option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='district'><option value=''>Select District</option><option value='krishna'>Krishna</option><option value='krishna_'>Krishna </option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='model_of_vehicle'><option value=''>Select Model</option><option value='access_125'>Access 125</option><option value='burgman_street'>Burgman Street</option><option value='gixxer'>Gixxer</option><option value='gixxer_250'>Gixxer 250</option><option value='gixxer_sf'>Gixxer Sf</option><option value='gixxer_sf250'>Gixxer Sf250</option><option value='intruder'>Intruder</option></select></div>						<div class='form-group pr-2'>
+						<div class='form-group pr-2 deg'><select class='form-control input-sm' name ='enquiry_date' id='enquiry_date'><option value='' selected='selected'>Select Date</option><option value='2021-05-08'>08-May-2021</option><option value='2021-05-09'>09-May-2021</option><option value='2021-05-11'>11-May-2021</option><option value='2021-05-12'>12-May-2021</option><option value='2021-05-13'>13-May-2021</option><option value='2021-05-14'>14-May-2021</option><option value='2021-05-15'>15-May-2021</option><option value='2021-05-16'>16-May-2021</option><option value='2021-05-17'>17-May-2021</option><option value='2021-05-18'>18-May-2021</option><option value='2021-05-19'>19-May-2021</option><option value='2021-05-20'>20-May-2021</option><option value='2021-05-21'>21-May-2021</option><option value='2021-05-22'>22-May-2021</option><option value='2021-05-23'>23-May-2021</option><option value='2021-05-24'>24-May-2021</option><option value='2021-05-25'>25-May-2021</option><option value='2021-05-26'>26-May-2021</option></select></div>
+
+
+						<div class='form-group pr-2'><select class='form-control input-sm' name ='city'><option value=''>Select City</option><option value='Akividu'>Akividu</option><option value='Bandar'>Bandar</option><option value='bantumilli'>Bantumilli</option><option value='Bhavanipuram'>Bhavanipuram</option><option value='city'>City</option><option value='Gudivada'>Gudivada</option><option value='Guntur'>Guntur</option><option value='h.junction'>H.junction</option><option value='jaggayyapeta'>Jaggayyapeta</option><option value='Kanuru/VIJAYAWADA'>Kanuru/VIJAYAWADA</option><option value='khalekhanpet'>Khalekhanpet</option><option value='krishna'>Krishna</option><option value='krouse'>Krouse</option><option value='Machilipatnam'>Machilipatnam</option><option value='machlipatam'>Machlipatam</option><option value='Mangalagiri'>Mangalagiri</option><option value='Mylavaram'>Mylavaram</option><option value='Naresh Kampa'>Naresh Kampa</option><option value='Nimmakuru'>Nimmakuru</option><option value='Nuzvid'>Nuzvid</option><option value='Nuzvide'>Nuzvide</option><option value='ongole'>Ongole</option><option value='p:+919533258899'>P:+919533258899</option><option value='p:+919700755134'>P:+919700755134</option><option value='pamarru'>Pamarru</option><option value='tadepalligudem'>Tadepalligudem</option><option value='Tenali'>Tenali</option><option value='Thirumalagari'>Thirumalagari</option><option value='Tippanagunta'>Tippanagunta</option><option value='Vijayavada'>Vijayavada</option><option value='Vijayawada'>Vijayawada</option><option value='vijayawada.'>Vijayawada.</option><option value='vinukonda'>Vinukonda</option><option value='Vissannapeta'>Vissannapeta</option><option value='vuyyuru'>Vuyyuru</option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='district'><option value=''>Select District</option><option value='krishna'>Krishna</option><option value='krishna_'>Krishna </option></select></div><div class='form-group pr-2'><select class='form-control input-sm'  name ='model_of_vehicle'><option value=''>Select Model</option><option value='access_125'>Access 125</option><option value='burgman_street'>Burgman Street</option><option value='gixxer'>Gixxer</option><option value='gixxer_250'>Gixxer 250</option><option value='gixxer_sf'>Gixxer Sf</option><option value='gixxer_sf250'>Gixxer Sf250</option><option value='intruder'>Intruder</option></select></div>						
+						<div class='form-group pr-2'>
 							<select class='form-control input-sm'  name ='test_ride'>
 								<option value='' >Select TestRide</option>
 								<option value='Yes' >Yes</option>
@@ -97,13 +108,19 @@
 								<option value='Delivered' >Delivered</option>
 							</select>
 						</div>
+
+					<div class="pad" style="display: flex; justify-content: flex-end; max-width:200px; float:right; padding: 10px 10px;">
+					<button type="reset" name="reset" value='Reset' id="configreset" class="open-button">Reset</button>
+				</div>
 						<input type='hidden' name='dealer' value=Padmaja_KRSH />
 						<input type='hidden' name='customstart' value=2021-05-01 />
 						<input type='hidden' name='customend' value=2021-05-29 />
 						<input type='hidden' name='vehiclemodel' value=all />
 						<input type='hidden' name='campaigntype' value=all />
 						<input type='hidden' name='data' value='submit' />
-						<button type="submit" name="submit" value='submit' id="filtersubmit" class="open-button">Filter</button>
+						<div class="pad" style="display: flex; justify-content: flex-end; max-width:200px; float:right; padding: 10px 10px;">
+						<button  type="submit" name="submit" value='submit' id="filtersubmit" class="open-button">Filter</button>
+					</div>
 						</form>
 						
 						
@@ -3091,6 +3108,14 @@
             &copy; Copyright <strong><span>Pramaan Marketing 2021</span></strong>. All Rights Reserved
         </div>
     </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
 </body>
 <section class="popbox group" id="popbox">
     <div class="popup">

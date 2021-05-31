@@ -154,14 +154,14 @@ main {
     background-color: #efb81b;
     border-color: #efb81b;
     max-width:150px;
-	font-size: 12px;
+    font-size: 12px;
 }
 
 .table td, .table th {
     max-width: 150px;
-	font-size: 12px;
+    font-size: 12px;
     padding: 5px;
-	text-align: center; vertical-align: middle;
+    text-align: center; vertical-align: middle;
 }
 
 .tab-section .nav-tabs {
@@ -388,6 +388,10 @@ main {
 .indiv {
     padding: 15px
 }
+.form-control 
+{
+    border: none;
+}
 
 /*****poup edit form ***********/
 
@@ -510,7 +514,7 @@ main {
 
 /*responsive*/
 
-@media(max-width: 900px){
+@media(max-width: 768px){
 
     .res{
     width: 100%;
@@ -570,7 +574,7 @@ td#Comments
 }
 .table-responsive
 {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 
@@ -590,3 +594,121 @@ td#Comments
 
 
 
+
+
+@media(min-width: 768px){
+
+i.fa-download
+{
+  display: none;
+}
+
+}
+
+@media(max-width: 768px){
+
+.filename
+{
+    background: transparent;
+    border-bottom: white 1px solid;
+    border-radius: 0px;
+    padding: 10px 10px;
+
+}
+
+i.fa-download
+{
+    font-size:38px;
+     border: 3px solid white;
+      border-radius: 100%;
+      width: 60px;
+       height: 60px;
+       text-align:center;
+       padding: 10px 0px;
+}
+
+.butt
+{
+    display: none;
+}
+
+.space
+{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+   /* display: inline-block;
+    width: auto;
+    vertical-align: middle;*/
+    padding: 0px 50px;
+}
+
+.form-control
+{
+    background: transparent!important;
+    border-bottom: white 1px solid!important;
+    border-radius: 0px!important;
+    width: 220px!important;
+
+}
+
+
+
+.form-inline .form-control {
+  
+    border: none;
+    display: inline-block;
+    width: 120px;
+    vertical-align: middle;
+    padding: 0px 50px;
+
+}
+
+
+.form-inline .form-group
+{
+ padding: 10px 0px;
+}
+
+.pad
+{
+     display: inline-block;
+    
+    vertical-align: middle;
+    padding: 10px 10px;
+    justify-content: center;
+}
+
+
+}
+
+
+
+@media(max-width: 500px){
+
+
+.form-control
+{
+    background: transparent!important;
+    border-bottom: white 1px solid!important;
+    border-radius: 0px!important;
+    width: 100%!important;
+
+}
+.form-inline .form-group
+{
+ padding: 0px 0px;
+}
+
+
+
+.form-inline  {
+  
+   /*width: 230px;*/
+justify-content: center;
+align-items: center;
+}
+
+
+
+}
