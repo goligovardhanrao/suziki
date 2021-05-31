@@ -708,6 +708,12 @@ i.fa-download
 justify-content: center;
 align-items: center;
 }
+    
+    select.form-control
+{
+    width: 300px!important;
+}
+
 
 
 
